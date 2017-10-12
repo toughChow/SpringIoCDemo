@@ -8,8 +8,16 @@ import online.shixun.project.dao.RegisterDao;
 @Service
 public class RegisterService {
 
-	@Autowired
 	private RegisterDao registerDao;
+
+	public RegisterService(){
+		
+	}
+	
+	@Autowired
+	public RegisterService(RegisterDao registerDao){
+		this.registerDao = registerDao;
+	}
 	
 	public void doRegister(){
 		registerDao.saveUser();
